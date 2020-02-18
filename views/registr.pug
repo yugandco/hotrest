@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    .container
+        .row
+            #registr_form.col-md-6.offset-3.col-xs-12
+                != messages('message', locals)
+                h4 Registration form
+                form(method='POST', action='/registr')
+                    .row
+                        .col-md-6
+                            .form-group
+                                label(for='fname') First Name
+                                input#fname.form-control(type='text', name='fname')
+                        .col-md-6
+                            .form-group
+                                label(for='fname') Second Name
+                                input#sname.form-control(type='text', name='sname')
+                    .form-group
+                        label(for='email') Email
+                        input#email.form-control(type='email', name='email')
+                    .form-group
+                        label(for='username') Username
+                        input#username.form-control(type='text', name='username')
+                    .form-group
+                        label(for='password') Password
+                        input#password.form-control(type='password', name='password')
+                    .form-group
+                        label(for='password2') Repeat password
+                        input#password2.form-control(type='password', name='password2')
+                    button.btn.btn-dark(type='submit') Registration

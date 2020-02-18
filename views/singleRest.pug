@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    .container
+        .row
+            .col-md-6.offset-3(style='margin-top: 10vh')
+                //- a(href='/hotel') Back to Hotel
+                h4 Booking Restaurant
+                form(method='POST', action='/restaurant/' + user._id)
+                    //- .form-group
+                    //-     label(for='user__id') User__Id
+                    //-     input#user__id.form-control(type='text', name='user__id')
+                    .form-group
+                        label(for='num_people') Number of People
+                        input#num_people.form-control(type='number', name='num_people')
+                    .form-group
+                        label(for='type_client') Type Client
+                        select#type_client.form-control(name='type_client')
+                            option(value="Simple") Simple Client
+                            option(value="Vip") Vip Client 
+                    .form-group
+                        label(for='comin_date') Comin Date
+                        input#comin_date.form-control(type='date', name='comin_date')
+                    button.btn.btn-primary(type='submit') Booking

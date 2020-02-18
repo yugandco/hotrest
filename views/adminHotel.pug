@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    .row
+        .container
+            .col-md-12(style='margin-top: 10vh')
+                h3 Hotel control page
+    .container
+        .row
+            each hotel, i in hotels
+                .col-md-3
+                    .card
+                        .card-body
+                            .card-subtitle.mb-2.badge.badge-primary='User ID: ' + hotel.user__id
+                            .card-title.font-weight-bold(style='font-size: 1.2em')='Booked room is: ' + hotel.type_rooms
+                            .card-subtitle.mb-2.text-muted.border-bottom='Number of your rooms: ' + hotel.num_rooms
+                            .card-text.border-bottom.mb-3
+                                div='Number of people: ' + hotel.num_people
+                                div='Number of bed: ' + hotel.num_bed
+                                div='Whats included: ' + hotel.included
+                                - let d = new Date(hotel.comin_free_date);
+                                - let dd = d.getDate()
+                                - if (dd < 10) dd = '0' + dd;
+                                - let mm = d.getMonth() + 1;
+                                - if (mm < 10) mm = '0' + mm;
+                                - let yy = d.getFullYear()
+                                - if (yy < 10) yy = '0' + yy;
+                                div='Coming dates: ' + dd + '.' + mm + '.' + yy
+                                 - let dt = new Date(hotel.comout_free_date);
+                                - let ddd = dt.getDate()
+                                - if (ddd < 10) ddd = '0' + ddd;
+                                - let mmm = dt.getMonth() + 1;
+                                - if (mmm < 10) mmm = '0' + mmm;
+                                - let yyy = dt.getFullYear()
+                                - if (yyy < 10) yyy = '0' + yyy;
+                                div='Comout dates: ' + ddd + '.' + mmm + '.' + yyy
+                            a.card-link.delete-hotel-order(href='#', data-id=hotel._id) Delete

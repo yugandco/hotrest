@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    .row
+        .container
+            .col-md-12(style='margin-top: 10vh')
+                h3 Restaurant control page
+    .container
+        .row
+            each rest, i in rests
+                .col-md-3
+                    .card
+                        .card-body
+                            .card-subtitle.mb-3.badge.badge-primary='User ID: ' + rest.user__id
+                            .card-title.font-weight-bold(style='font-size: 1.2em')='Client: ' + rest.type_client
+                            .card-subtitle.mb-2.text-muted.border-bottom='Number of peopele: ' + rest.num_people
+                            .card-text.border-bottom.mb-3
+                                - let date = new Date(rest.comin_date);
+                                - let d2 = date.getDate()
+                                - if (d2 < 10) d2 = '0' + d2;
+                                - let m2 = date.getMonth() + 1;
+                                - if (m2 < 10) m2 = '0' + m2;
+                                - let y2 = date.getFullYear()
+                                - if (y2 < 10) y2 = '0' + y2;
+                                div='Coming dates: ' + d2 + '.' + m2 + '.' + y2
+                            a.card-link.delete-rest-order(href='#', data-id= rest._id) Delete

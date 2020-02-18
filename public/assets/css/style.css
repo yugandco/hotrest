@@ -1,0 +1,66 @@
+#first{
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://images.pexels.com/photos/2540653/pexels-photo-2540653.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-repeat: none;
+    background-size: cover;
+    justify-content: center;
+    /* align-items: center; */
+    color: white;
+    font-family: 'PT Mono', monospace;
+}
+
+#first h1{
+    position:relative;
+    top: 20vh;
+    background-color: rgba(0,0,0,0.1);
+}
+
+#first .date-text{
+    position:relative;
+    top: 20vh;
+    font-size: 1.5em;
+}
+
+#first .date-arrow{
+    transform: rotate(90deg);
+}
+
+#first .date-arrow .material-icons{
+    font-size: 3em;
+}
+
+#first #hotel{
+    height: 40vh;
+    outline: 1px solid white;
+    background: rgba(0,0,0,0.1);
+}
+
+#hotel a{
+    color: white;
+    font-size: 3.3em;
+}
+
+#first #restaurant{
+    height: 40vh;
+    outline: 1px solid white;
+    background: rgba(0,0,0,0.1);
+}
+
+#restaurant a{
+    color: white;
+    font-size: 3.3em;
+}
+
+/* REGISTR */
+#registr_form{
+    position: relative;
+    margin-top: 20vh;
+}
+
+#login_form{
+    position: relative;
+    margin-top: 30vh;
+}

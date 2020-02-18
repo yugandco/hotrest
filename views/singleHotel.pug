@@ -1,0 +1,70 @@
+extends layout
+
+block content
+    .container
+        .row
+            .col-md-6.offset-3(style='margin-top: 10vh')
+                //- a(href='/hotel') Back to Hotel
+                h4 Booking Hotel
+                form(method='POST', action='/hotel/' + user._id)
+                    //- .form-group
+                    //-     label(for='user__id') User__Id
+                    //-     input#user__id.form-control(type='text', name='user__id')
+                    .form-group
+                        label(for='type_rooms') Type Room
+                        input#type_rooms.form-control(type='text', name='type_rooms')
+                    .form-group
+                        label(for='num_rooms') Number of Rooms
+                        input#num_rooms.form-control(type='number', name='num_rooms')
+                    .form-group
+                        label(for='num_people') Number of People can comin
+                        input#num_people.form-control(type='number', name='num_people')
+                    .form-group
+                        label(for='num_bed') Number of Bed
+                        input#num_bed.form-control(type='number', name='num_bed')
+                    .form-group
+                        label(for='included') What's included
+                        input#included.form-control(type='text', name='included')
+                    .form-group
+                        label(for='comin_free_date') Comin Date
+                        input#comin_free_date.form-control(type='date', name='comin_free_date')
+                    .form-group
+                        label(for='comout_free_date') Comout Date
+                        input#comeout_free_date.form-control(type='date', name='comout_free_date')
+                    button.btn.btn-primary(type='submit') Booking
+                    
+
+
+
+//- extends layout
+
+//- block content
+//-     .container
+//-         .row(style='position: relative; top: 10vh')
+//-             .col-md-12
+//-                 a(href='/hotel/add-room') Add Room
+//-             .col-md-12
+//-                 .row
+//-                     each hotel, i in hotels
+//-                         .col-md-12.mt-4
+//-                             .card.shadow(style='border: none')
+//-                                 .row
+//-                                     .col-md-6(style='padding: 0')
+//-                                         img.card-img-top(src= hotel.img_rooms )
+//-                                     .col-md-6
+//-                                         .card-body
+//-                                             .row
+//-                                                 .col-md-8
+//-                                                     h5.card-title= hotel.type_rooms
+//-                                                     div.card-text
+//-                                                         p='Numbers of Rooms: '+hotel.num_rooms
+//-                                                         p='Peoples accommodation: ' + hotel.num_people
+//-                                                         p='Numbers of Beds: '+hotel.num_bed
+//-                                                         p='Whats included: '+hotel.included
+//-                                                         - let d = new Date(hotel.comin_free_date)
+//-                                                         p Free date time:
+//-                                                         span= d.getDay() + '.' + d.getMonth() + '.' + d.getFullYear()
+//-                                                         - let c = new Date(hotel.comout_free_date)
+//-                                                         span='-' + c.getDay() + '.' + c.getMonth() + '.' + c.getFullYear()
+//-                                                 .col-md-4(style='padding-top: 33vh')
+//-                                                     a.btn.btn-primary(href='#') Бронировать

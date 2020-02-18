@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    section#first
+        .container
+            h1.display-4 Welcome to the best Hotel & Restaurant in the World...
+            p.d-flex.justify-content-center.mt-5.date-text Choose our hotel and become a part of history
+            .row(style='position:relative; top: 25vh')
+                if user
+                    .col-6.col-xs-12
+                        div#hotel.d-flex.justify-content-center.align-items-center
+                            a(href='/hotel/' + user._id) HOTEL
+                    .col-6.col-xs-12
+                        div#restaurant.d-flex.justify-content-center.align-items-center
+                            a(href='/restaurant/' + user._id) RESTAURANT
+                else
+                    .col-6.col-xs-12
+                        div#hotel.d-flex.justify-content-center.align-items-center
+                            a(href='/login') HOTEL
+                    .col-6.col-xs-12
+                        div#restaurant.d-flex.justify-content-center.align-items-center
+                            a(href='/login') RESTAURANT
